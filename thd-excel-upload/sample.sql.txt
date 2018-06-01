@@ -1,0 +1,17 @@
+mysql> create database db_example; -- Create the new database
+mysql> create user 'springuser'@'localhost' identified by 'ThePassword'; -- Creates the user
+mysql> grant all on db_example.* to 'springuser'@'localhost'; -- Gives all the privileges to the new user on the newly created database
+
+CREATE TABLE user(id int,employeeId VARCHAR(45), name VARCHAR(45),email varchar(45));
+
+
+CSVReader reader = null;
+        try {
+            reader = new CSVReader(new FileReader(csvFile));
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                System.out.println("Country [id= " + line[0] + ", code= " + line[1] + " , name=" + line[2] + "]");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }

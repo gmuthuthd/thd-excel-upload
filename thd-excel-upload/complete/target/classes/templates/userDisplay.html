@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Details</title>
+</head>
+<body>
+	<div>
+	    
+	    <table border="1">
+	    <tr>
+		    <td >Id</td>
+		    <td>Name</td>
+		    <td>Email</td>	    
+	    </tr>
+	    <tr th:each="excelUploadDto : ${excelUploadDto}" >
+	     <!--    <td th:text="${excelUploadDto.uploadStatus[0].toString()}">1</td>
+	        <td><a href="#" th:text="${message.title}">Title ...</a></td>
+	       <td th:text="${message.text}">Text ...</td>-->
+	       
+	       <tr th:each="user : ${excelUploadDto.userList}">
+    			<td th:text="${user.id}">Id</td>	
+    			<td th:text="${user.name}">Name</td>
+    			<td th:text="${user.email}">Email</td>		
+			</tr> 
+			<tr th:each="user : ${userDisplay}">    			
+			</tr> 
+	    </tr>
+	    
+	    </table>
+	</div>
+</body>
+</html>

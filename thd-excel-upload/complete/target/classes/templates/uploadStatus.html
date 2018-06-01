@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h1>Spring Boot - Upload Status</h1>
+
+<!-- <div th:if="${message}">
+<h2 th:text="${message}"/>-->
+
+<div>
+    
+    <table>
+    
+    <tr th:each="excelUploadDto : ${excelUploadDto}">
+        <td th:text="${excelUploadDto.uploadStatus[0].toString()}">1</td>
+        <td th:text="${excelUploadDto.uploadStatus[1].toString()}">1</td>      
+     <!--   <td><a href="#" th:text="${message.title}">Title ...</a></td>
+       <td th:text="${message.text}">Text ...</td>-->
+    </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
